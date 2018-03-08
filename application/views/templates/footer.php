@@ -18,21 +18,21 @@
   <a href="#" class="back-to-top"><i class="fa fa-chevron-up"></i></a>
 
 <!-- JavaScript Libraries -->
-  <script src="assets/lib/jquery/jquery.min.js"></script>
-  <script src="assets/lib/jquery/jquery-migrate.min.js"></script>
-  <script src="assets/lib/bootstrap/js/bootstrap.bundle.min.js"></script>
-  <script src="assets/lib/easing/easing.min.js"></script>
-  <script src="assets/lib/superfish/hoverIntent.js"></script>
-  <script src="assets/lib/superfish/superfish.min.js"></script>
-  <script src="assets/lib/wow/wow.min.js"></script>
-  <script src="assets/lib/owlcarousel/owl.carousel.min.js"></script>
-  <script src="assets/lib/magnific-popup/magnific-popup.min.js"></script>
-  <script src="assets/lib/sticky/sticky.js"></script>
-  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD8HeI8o-c1NppZA-92oYlXakhDPYR7XMY"></script>
+  <script src="<?php echo base_url('assets/lib/jquery/jquery.min.js')?>"></script>
+  <script src="<?php echo base_url('assets/lib/jquery/jquery-migrate.min.js')?>"></script>
+  <script src="<?php echo base_url('assets/lib/bootstrap/js/bootstrap.bundle.min.js')?>"></script>
+  <script src="<?php echo base_url('assets/lib/easing/easing.min.js')?>"></script>
+  <script src="<?php echo base_url('assets/lib/superfish/hoverIntent.js')?>"></script>
+  <script src="<?php echo base_url('assets/lib/superfish/superfish.min.js')?>"></script>
+  <script src="<?php echo base_url('assets/lib/wow/wow.min.js')?>"></script>
+  <script src="<?php echo base_url('assets/lib/owlcarousel/owl.carousel.min.js')?>"></script>
+  <script src="<?php echo base_url('assets/lib/magnific-popup/magnific-popup.min.js')?>"></script>
+  <script src="<?php echo base_url('assets/lib/sticky/sticky.js')?>"></script>
+  <script src="<?php echo base_url('assets/js/news_carousel.js')?>"></script>
+ 
   <!-- Contact Form JavaScript File -->
-  <script src="assets/contactform/contactform.js"></script>
 
   <!-- Template Main Javascript File -->
-  <script src="assets/js/main.js"></script>
+  <script src="<?php echo base_url('assets/js/main.js')?>"></script>
 </body>
 </html>
