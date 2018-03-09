@@ -26,10 +26,8 @@
           </div><!-- End Item -->
           <?php endif?>
         <?php endforeach?>
-         
-                
-      </div><!-- End Carousel Inner -->
 
+      </div><!-- End Carousel Inner -->
 
     <ul class="list-group col-sm-4">
       <li data-target="#myCarousel" data-slide-to="0" class="list-group-item active"><h6>Lorem ipsum dolor sit amet consetetur sadipscing</h6></li>
