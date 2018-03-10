@@ -594,9 +594,7 @@ pre code {
     margin-left: auto
 }
 
-.img-def {
-    width:100%;
-}
+
 
 @media (min-width:576px) {
     .container {

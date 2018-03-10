@@ -18,6 +18,16 @@
   <a href="#" class="back-to-top"><i class="fa fa-chevron-up"></i></a>
 
 <!-- JavaScript Libraries -->
+  <script>
+    ClassicEditor
+      .create( document.querySelector( '#editor' ) )
+      .then( editor => {
+          console.log( editor );
+      } )
+      .catch( error => {
+          console.error( error );
+      } );
+  </script>
   <script src="<?php echo base_url('assets/lib/jquery/jquery.min.js')?>"></script>
   <script src="<?php echo base_url('assets/lib/jquery/jquery-migrate.min.js')?>"></script>
   <script src="<?php echo base_url('assets/lib/bootstrap/js/bootstrap.bundle.min.js')?>"></script>
@@ -29,6 +39,7 @@
   <script src="<?php echo base_url('assets/lib/magnific-popup/magnific-popup.min.js')?>"></script>
   <script src="<?php echo base_url('assets/lib/sticky/sticky.js')?>"></script>
   <script src="<?php echo base_url('assets/js/news_carousel.js')?>"></script>
+  <script src="<?php echo base_url('assets/js/photo_gallery.js')?>"></script>
  
   <!-- Contact Form JavaScript File -->
 
