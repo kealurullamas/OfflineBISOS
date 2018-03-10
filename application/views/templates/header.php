@@ -42,12 +42,17 @@
 
       <nav id="nav-menu-container">
         <ul class="nav-menu">
+<<<<<<< HEAD
           <li class="menu-active"><a href="<?php echo base_url().'Pages/view/home'?>">Home</a></li>
           <li class="menu-has-children"><a href="">About Us</a>
+=======
+          <li class="menu-active"><a href="<?php echo base_url(); ?>">Home</a></li>
+          <li class="menu-has-children"><a href=>About Us</a>
+>>>>>>> a843a9f9039ef06629810c7aad5efeb646736059
             <ul>
-              <li><a href="#">History</a></li>
-              <li><a href="#">Barangay Council</a></li>
-              <li><a href="#">Barangay Profile</a></li>
+              <li><a href="<?php echo base_url(); ?>mission_and_vision">Mission and Vision</a></li>
+              <li><a href="<?php echo base_url(); ?>barangay_council">Barangay Council</a></li>
+              <li><a href="<?php echo base_url(); ?>barangay_profile">Barangay Profile</a></li>
               <li><a href="#">Plans and Programs</a></li>
               <li><a href="#">Financial Reports</a></li>
               <li><a href="#">Contacts</a></li>
@@ -58,7 +63,7 @@
               <li><a href="#">Map</a></li>
             </ul>
           </li>
-          <li><a href="#photogallery">Photo Gallery</a></li>
+          <li><a href="">Photo Gallery</a></li>
           <li class="menu-has-children"><a href="">Others</a>
             <ul>
               <li><a href="<?php echo base_url()?>news">News</a></li>
