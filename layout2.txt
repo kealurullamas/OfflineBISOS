@@ -1,12 +1,14 @@
-
-<!------ Include the above in your HEAD tag ---------->
-<div class="row">
-  <div class="col-sm-1"></div>
-  <div class="col-sm-8">
-  <br>
+<br>
+<div class="blog-header">
     <div class="container">
-    <h2>Barangay News Headlines</h2>
-    <br>
+    <h1 class="blog-title">News Headlines</h1>
+    </div>
+</div>
+<div class="container">
+
+      <div class="row row-offcanvas row-offcanvas-right">
+
+        <div class="col-12 col-md-11">
         <div id="myCarousel" class="carousel slide" data-ride="carousel">
         
         <!-- Wrapper for slides -->
@@ -32,7 +34,7 @@
             <?php endif?>
             <?php endforeach?>
             
-                    
+            
         </div><!-- End Carousel Inner -->
 
 
@@ -69,9 +71,8 @@
 
         </div><!-- End Carousel -->
         <hr>
-
-        <!-- Start Gallery -->
-         <div class="container">
+         <!-- Start Gallery -->
+        <div class="container">
 
             <h1 class="my-4 text-center text-lg-left">Thumbnail Gallery</h1>
 
@@ -137,48 +138,41 @@
                     <img class="img-fluid img-thumbnail" src="http://placehold.it/400x300" alt="">
                 </a>
                 </div>
-                </div>
             </div>
         </div>
         <!--end of gallery-->
-  </div>
-  <div class="col-6 col-md-1 sidebar-offcanvas" id="sidebar">
-  <br>
-  <br>
-  <br>
-  <br>
-        <div class="card" style="width: 18rem;">
-        <div class="card-body">
-            <h5 class="card-title">Special title treatment</h5>
-            <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-            <a href="#" class="btn btn-primary">Go somewhere</a>
-            <h5 class="card-title">Special title treatment</h5>
-            <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-            <a href="#" class="btn btn-primary">Go somewhere</a>
-            <h5 class="card-title">Special title treatment</h5>
-            <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-            <a href="#" class="btn btn-primary">Go somewhere</a>
-            <h5 class="card-title">Special title treatment</h5>
-            <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-            <a href="#" class="btn btn-primary">Go somewhere</a>
         </div>
-        </div>
+    
+        <div class="col-6 col-md-1 sidebar-offcanvas" id="sidebar">
+            <div class="card" style="width: 18rem;">
+                <div class="card-body">
+                    <h5 class="card-title"><strong>Announcements</strong></h5>
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item">The Sun will come back</li>
+                        <li class="list-group-item">The Sun won't come back</li>
+                        <li class="list-group-item">It will have babies and spawn thousands more suns</li>
+                        <li class="list-group-item">Good night!</li>
+                    </ul>
+                </div>
 
-        <div class="card text-center" style="width: 18rem;">
-        <div class="card-body">
-            <h5 class="card-title">Special title treatment</h5>
-            <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-            <a href="#" class="btn btn-primary">Go somewhere</a>
-        </div>
-        </div>
+                <div class="card text-center" style="width: 18rem;">
+                <div class="card-body">
+                    <h5 class="card-title">Special title treatment</h5>
+                    <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                    <a href="#" class="btn btn-primary">Go somewhere</a>
+                </div>
+                </div>
 
-        <div class="card text-right" style="width: 18rem;">
-        <div class="card-body">
-            <h5 class="card-title">Special title treatment</h5>
-            <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-            <a href="#" class="btn btn-primary">Go somewhere</a>
-        </div>
-        </div>
-  </div>
-</div>
-<br>
+                <div class="card text-right" style="width: 18rem;">
+                <div class="card-body">
+                    <h5 class="card-title">Special title treatment</h5>
+                    <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                    <a href="#" class="btn btn-primary">Go somewhere</a>
+                </div>
+                </div>
+
+            </div>
+        </div><!--/span-->
+      <hr>
+
+    </div><!--/.container-->

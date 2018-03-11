@@ -21,6 +21,16 @@
         }
         public function create_announcement()
         {
+            $slug=url_title($this->input->post('title'));
+
+            $data=[
+                'title'=>$this->input->post('title'),
+                'body'=>$this->input->post('body'),
+                'slug'=>$slug
+                
+            ];
+
+            $this->db->insert('announcements',$data);
         }
         public function delete_announcement()
         {

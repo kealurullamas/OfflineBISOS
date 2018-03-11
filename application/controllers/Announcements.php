@@ -4,7 +4,6 @@
         public function view()
         {
             $data['title']='announcement title';
-
             //load announcement view
         }
         public function create()
@@ -17,10 +16,14 @@
 
             if($this->form_validation->run()===FALSE)
             {
-                //redirect to news creation
+                $this->load->view('templates/header');
+                $this->load->view('Announcements/create',$data);
+                $this->load->view('templates/footer');
             }
-            $this->announcement_model->create_announcement();
-            redirect();
+            else{
+                $this->announcements_model->create_announcement();
+                redirect('pages/view//home');
+            }
         }
     }
 ?>
