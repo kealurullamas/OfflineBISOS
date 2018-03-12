@@ -7827,6 +7827,7 @@ button.bg-dark:hover {
     margin-top: 3rem!important
 }
 
+
 .mr-5,
 .mx-5 {
     margin-right: 3rem!important
@@ -9272,7 +9273,15 @@ a.text-dark:hover {
     .table-bordered th {
         border: 1px solid #ddd!important
     }
+
 }
+
+/* created */
+.m-top10{
+    margin-top: 10em;
+}
+
+
 
 
 /*# sourceMappingURL=bootstrap.min.css.map */
