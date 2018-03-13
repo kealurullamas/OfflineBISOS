@@ -5,7 +5,7 @@
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
  */
 
-:root {
+ :root {
 	--blue: #007bff;
 	--indigo: #6610f2;
 	--purple: #6f42c1;
@@ -6358,6 +6358,10 @@ button.close {
 	background-color: #007bff !important
 }
 
+.bg-primaryASD {
+	background-color: #f700ff !important
+}
+
 a.bg-primary:focus,
 a.bg-primary:hover,
 button.bg-primary:focus,
@@ -9269,5 +9273,7 @@ a.text-dark:hover {
 		border: 1px solid #ddd !important
 	}
 }
+
+
 
 /*# sourceMappingURL=bootstrap.min.css.map */
