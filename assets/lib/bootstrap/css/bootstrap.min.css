@@ -591,7 +591,16 @@ pre code {
     padding-right: 15px;
     padding-left: 15px;
     margin-right: auto;
-    margin-left: auto
+    margin-left: auto;
+    
+}
+.justify{
+    text-align: justify !important;
+}
+
+.container-body {
+    height:80vh;
+    padding-top:50px;
 }
 
 
