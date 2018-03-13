@@ -51,6 +51,7 @@
             //}
             
         }
+        
         public function editnews(){
             if(empty($this->session->userdata('username'))){
                 redirect('admin');
@@ -61,6 +62,17 @@
             $this->load->view('admin_pages/admin_editnews');
             $this->load->view('templates/admin_footer');
         }
+        public function addnews(){
+            if(empty($this->session->userdata('username'))){
+                redirect('admin');
+            }
+
+            
+            $this->load->view('templates/admin_header');
+            $this->load->view('admin_pages/admin_addnews');
+            $this->load->view('templates/admin_footer');
+        }
+        
         
     }
 

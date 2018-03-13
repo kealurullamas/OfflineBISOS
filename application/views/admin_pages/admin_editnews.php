@@ -20,5 +20,6 @@
                 </div>
                 <input type="submit" class="btn btn-default" value="Update">
             </form>
+        </div>
     </div>
 </div>

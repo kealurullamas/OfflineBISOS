@@ -56,5 +56,28 @@
             $this->session->sess_destroy();
             redirect('admin', 'refresh');
         }
+
+        public function createnews(){
+        
+            $this->form_validation->set_rules('newstitle','Title','required');
+            $this->form_validation->set_rules('newsbody','Body','required');
+                if($this->form_validation->run()===FALSE)
+                {
+                    $data = ['error' => '* field is required'];
+                    $this->session->set_flashdata($data);
+                    // $this->load->view('templates/admin_header');
+                    // $this->load->view('admin_pages/admin_news', $data);
+                    // $this->load->view('templates/admin_footer');
+                    redirect('admin_pages/addnews', $data, 'refresh');
+
+                }
+                else {
+                $this->news_model->create_news();
+                redirect('admin_pages/view');
+                }
+            
+            }
+
+        
     }
 ?>

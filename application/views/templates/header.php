@@ -61,7 +61,8 @@
           <li><a href="">Photo Gallery</a></li>
           <li class="menu-has-children"><a href="">Others</a>
             <ul>
-              <li><a href="<?php echo base_url()?>news">News</a></li>
+              <li><a href="<?php echo base_url()?>news/view_all">News</a></li>
+              <li><a href="<?php echo base_url()?>announcements/viewAll">Announcements</a></li>
             </ul>
           </li>
         </ul>
