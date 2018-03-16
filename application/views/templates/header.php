@@ -7,7 +7,6 @@
   <meta content="" name="keywords">
   <meta content="" name="description">
 
-
   <!-- Favicons -->
   <link href="<?php echo base_url('assets/img/favicon.png')?>" rel="icon">
   <link href="<?php echo base_url('assets/img/apple-touch-icon.png')?>" rel="apple-touch-icon">
@@ -42,21 +41,12 @@
 
       <nav id="nav-menu-container">
         <ul class="nav-menu">
-<<<<<<< HEAD
           <li class="menu-active"><a href="<?php echo base_url().'Pages/view/home'?>">Home</a></li>
           <li class="menu-has-children"><a href="">About Us</a>
             <ul>
               <li><a href="<?php echo base_url().'Pages/view/mission_and_vision'?>">Mission and Vision</a></li>
               <li><a href="<?php echo base_url().'Pages/view/barangay_council'?>">Barangay Council</a></li>
               <li><a href="<?php echo base_url().'Pages/view/barangay_profile'?>">Barangay Profile</a></li>
-=======
-          <li class="menu-active"><a href="<?php echo base_url()?>pages/view/home">Home</a></li>
-          <li class="menu-has-children"><a href="">About Us</a>
-            <ul>
-              <li><a href="<?php echo base_url(); ?>pages/view/mission_and_vision">Mission and Vision</a></li>
-              <li><a href="<?php echo base_url(); ?>barangay_council">Barangay Council</a></li>
-              <li><a href="<?php echo base_url(); ?>barangay_profile">Barangay Profile</a></li>
->>>>>>> 8587df7ec30ef5d11aeb313444400ba71e85a5cf
               <li><a href="#">Plans and Programs</a></li>
               <li><a href="#">Financial Reports</a></li>
               <li><a href="#">Contacts</a></li>
