@@ -1,11 +1,15 @@
 <?php
     class Announcements extends CI_controller
     {
-        public function view()
-        {
-            $data['title']='announcement title';
-
-            //load announcement view
+        public function viewAll()
+        {   
+            $data=[
+                'title'=>'Announcements',
+                'announcements'=>$this->announcements_model->getAllAnnouncements()
+            ];
+            $this->load->view('templates/header');
+            $this->load->view('Announcements/index',$data);
+            $this->load->view('templates/footer');
         }
         public function create()
         {
@@ -17,10 +21,29 @@
 
             if($this->form_validation->run()===FALSE)
             {
-                //redirect to news creation
+                $this->load->view('templates/header');
+                $this->load->view('Announcements/create',$data);
+                $this->load->view('templates/footer');
             }
-            $this->announcement_model->create_announcement();
-            redirect();
+            else{
+                $this->announcements_model->create_announcement();
+                redirect('pages/view//home');
+            }
+        }
+        public function view($slug=null)
+        {
+            $data=[
+                'announcement'=>$this->announcements_model->get_announcement($slug)
+            ];
+            
+            if(empty($data['announcement']))
+            {
+                show404();
+            }
+            
+            $this->load->view('templates/header');
+            $this->load->view('Announcements/view');
+            $this->load->view('templates/footer');
         }
     }
 ?>

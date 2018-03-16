@@ -1,10 +1,11 @@
 
 <!------ Include the above in your HEAD tag ---------->
 <div class="row">
-  <div class="col-sm-1">.col-sm-3</div>
+  <div class="col-sm-1"></div>
   <div class="col-sm-8">
   <br>
     <div class="container">
+    
     <h2>Barangay News Headlines</h2>
     <br>
         <div id="myCarousel" class="carousel slide" data-ride="carousel">
@@ -73,7 +74,7 @@
         <!-- Start Gallery -->
          <div class="container">
 
-            <h1 class="my-4 text-center text-lg-left">Thumbnail Gallery</h1>
+            <h1 class="my-4 text-center text-lg-left">Barangay Gallery</h1>
 
             <div class="row text-center text-lg-left">
 
@@ -142,39 +143,29 @@
         </div>
         <!--end of gallery-->
   </div>
-  <div class="col-sm-2">
-        <div class="card" style="width: 18rem;">
+  <div class="col-6 col-md-1 sidebar-offcanvas" id="sidebar">
+  <br>
+        <div class="card" style="width: 22rem;">
         <div class="card-body">
-            <h5 class="card-title">Special title treatment</h5>
-            <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-            <a href="#" class="btn btn-primary">Go somewhere</a>
-            <h5 class="card-title">Special title treatment</h5>
-            <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-            <a href="#" class="btn btn-primary">Go somewhere</a>
-            <h5 class="card-title">Special title treatment</h5>
-            <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-            <a href="#" class="btn btn-primary">Go somewhere</a>
-            <h5 class="card-title">Special title treatment</h5>
-            <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-            <a href="#" class="btn btn-primary">Go somewhere</a>
+        <h5>Announcements</h5>
+            <div class="list-group">
+                <?php foreach($Announcements as $announcement):?>
+                <a href="<?php echo base_url().'announcements/view/'.$announcement['slug'];?>" class="list-group-item list-group-item-action flex-column align-items-start">
+                    <div class="d-flex w-100 justify-content-between">
+                    <h5 class="mb-1"><strong><?php echo $announcement['title'];?></strong></h5>
+                    </div>
+                    <small><?php echo $announcement['created_at'];?></small>
+                    <p class="mb-1"><?php echo word_limiter($announcement['body'],20);?></p>
+                    <small>Read More</small>
+                </a>
+               
+                <?php endforeach;?>
+            </div>
+            <br>
+            <a href="#" class="btn btn-primary">More</a>
         </div>
         </div>
 
-        <div class="card text-center" style="width: 18rem;">
-        <div class="card-body">
-            <h5 class="card-title">Special title treatment</h5>
-            <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-            <a href="#" class="btn btn-primary">Go somewhere</a>
-        </div>
-        </div>
-
-        <div class="card text-right" style="width: 18rem;">
-        <div class="card-body">
-            <h5 class="card-title">Special title treatment</h5>
-            <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-            <a href="#" class="btn btn-primary">Go somewhere</a>
-        </div>
-        </div>
   </div>
 </div>
 <br>
