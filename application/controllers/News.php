@@ -37,12 +37,15 @@ class News extends CI_controller
     }
     public function view($slug=null)
     {
-        $data['news']=$this->news_model->get_news($slug);
+        $data=[
+            'news'=>$this->news_model->get_news($slug),
+            'title'=>'Barangay News'
+        ];
         if(empty($data['news']))
         {
             show_404();
         }
-        $data['title']=$data['news']['title'];
+        
         $this->load->view('templates/header');
         $this->load->view('News/view',$data);
         $this->load->view('templates/footer');
@@ -60,7 +63,7 @@ class News extends CI_controller
         }
         else {
            $this->news_model->create_news();
-           redirect('news');
+           redirect('news/view_all');
         }
         
     }
