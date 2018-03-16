@@ -5,7 +5,7 @@
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
  */
 
-:root {
+ :root {
     --blue: #007bff;
     --indigo: #6610f2;
     --purple: #6f42c1;
@@ -7834,6 +7834,7 @@ button.bg-dark:hover {
     margin-top: 3rem!important
 }
 
+
 .mr-5,
 .mx-5 {
     margin-right: 3rem!important
@@ -9279,7 +9280,15 @@ a.text-dark:hover {
     .table-bordered th {
         border: 1px solid #ddd!important
     }
+
 }
+
+/* created */
+.m-top10{
+    margin-top: 10em;
+}
+
+
 
 
 /*# sourceMappingURL=bootstrap.min.css.map */

@@ -67,6 +67,8 @@ class News extends CI_controller
         }
         
     }
+    
+    
 
  
 }
