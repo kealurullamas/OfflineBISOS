@@ -1,7 +1,7 @@
 <div class="container">
     <br>
     <h1 style="" align="left">
-        <span id="sites-page-title" dir="ltr" tabindex="-1" style="outline: none"><b>Mission and Vision</b></span>
+        <span tabindex="-1" style="outline: none"><b>Mission and Vision</b></span>
     </h1>
     <h3 style="" align="center">
         <span style="font-size:20.0pt;line-height:150%;font-family:Arial, Helvetica, sans-serif"><b>Mission</b></span>
