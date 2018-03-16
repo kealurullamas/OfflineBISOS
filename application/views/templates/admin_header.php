@@ -16,6 +16,7 @@
   <link href="<?php echo base_url(); ?>assets/admin/vendor/datatables/dataTables.bootstrap4.css" rel="stylesheet">
   <!-- Custom styles for this template-->
   <link href="<?php echo base_url(); ?>assets/admin/css/sb-admin.css" rel="stylesheet">
+  
 </head>
 
 <body>
@@ -34,16 +35,10 @@
             <span class="nav-link-text">Dashboard</span>
           </a>
         </li>
-        <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Charts">
-          <a class="nav-link" href="charts.html">
-            <i class="fa fa-fw fa-area-chart"></i>
-            <span class="nav-link-text">Charts</span>
-          </a>
-        </li>
-        <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Tables">
-          <a class="nav-link" href="tables.html">
+        <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Announcement">
+          <a class="nav-link" href="<?php echo base_url('Admin_Pages/announcements'); ?>">
             <i class="fa fa-fw fa-table"></i>
-            <span class="nav-link-text">Tables</span>
+            <span class="nav-link-text">Announcements</span>
           </a>
         </li>
         <li class="nav-item" data-toggle="tooltip" data-placement="right" title="News">
@@ -51,6 +46,7 @@
             <i class="fa fa-fw fa-newspaper-o"></i>
             <span class="nav-link-text">News</span>
           </a>
+         
         </li>
         <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Components">
           <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#collapseComponents" data-parent="#exampleAccordion">
@@ -150,17 +146,19 @@
             Create Content
           </a>
           <div class="dropdown-menu" aria-labelledby="contentDropdown">
+             
+            <a class="dropdown-item" href="<?php echo base_url('admin_pages/addannouncement'); ?>">
+              <span class="">Add Announcement</span>
+            </a>
+            <div class="dropdown-divider"></div>
             <a class="dropdown-item" href="<?php echo base_url('admin_pages/addnews'); ?>">
               <span class="">Add News</span>
             </a>
             <div class="dropdown-divider"></div>
             <a class="dropdown-item" href="#">
-              <span class="">Add Person</span>
+              <span class="">Add Citizen</span>
             </a>
-            <div class="dropdown-divider"></div>
-            <a class="dropdown-item" href="#">
-              <span class="">Add Announcement</span>
-            </a>
+           
     
         </li>
         <li class="nav-item">

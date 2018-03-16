@@ -17,7 +17,7 @@
         public function view(){
             
             if(empty($this->session->userdata('username'))){
-                redirect('admin');
+                redirect('admin', 'refresh');
             }
             
             $this->load->view('templates/admin_header');
@@ -27,7 +27,7 @@
         
         public function news(){
             if(empty($this->session->userdata('username'))){
-                redirect('admin');
+                redirect('admin', 'refresh');
             }
 
             $data = [
@@ -37,34 +37,24 @@
             $this->load->view('templates/admin_header');
             $this->load->view('admin_pages/admin_news', $data);
             $this->load->view('templates/admin_footer');
-            // $this->form_validation->set_rules('title','Title','required');
-            // $this->form_validation->set_rules('body','Body','required');
-            // if($this->form_validation->run()===FALSE)
-            // {
-            //     $this->load->view('templates/header');
-            //     $this->load->view('News/create',$data);
-            //     $this->load->view('templates/footer');
-            // }
-            // else {
-            // $this->news_model->create_news();
-            // redirect('news');
-            //}
             
         }
         
-        public function editnews(){
+        public function editnews($id){
             if(empty($this->session->userdata('username'))){
-                redirect('admin');
+                redirect('admin', 'refresh');
             }
+
+            $data['row'] = $this->news_model->get_rownews($id);
             // pass data from table row
             
             $this->load->view('templates/admin_header');
-            $this->load->view('admin_pages/admin_editnews');
+            $this->load->view('admin_pages/admin_editnews', $data);
             $this->load->view('templates/admin_footer');
         }
         public function addnews(){
             if(empty($this->session->userdata('username'))){
-                redirect('admin');
+                redirect('admin', 'refresh');
             }
 
             
@@ -73,6 +63,40 @@
             $this->load->view('templates/admin_footer');
         }
         
+        public function announcements(){
+            if(empty($this->session->userdata('username'))){
+                redirect('admin', 'refresh');
+            }
+            //get announcement
+            $data = [
+                'announcements' => $this->announcements_model->getAllAnnouncements()
+            ];
+            $this->load->view('templates/admin_header');
+            $this->load->view('admin_pages/admin_announcement', $data);
+            $this->load->view('templates/admin_footer');
+        }
+
+        public function addannouncement(){
+            if(empty($this->session->userdata('username'))){
+                redirect('admin', 'refresh');
+            }
+
+            $this->load->view('templates/admin_header');
+            $this->load->view('admin_pages/admin_addannouncement');
+            $this->load->view('templates/admin_footer');
+        }
+
+        public function editannouncement($id){
+            if(empty($this->session->userdata('username'))){
+                redirect('admin', 'refresh');
+            }
+
+            $data['row'] = $this->announcements_model->get_rowannouncement($id);
+
+            $this->load->view('templates/admin_header');
+            $this->load->view('admin_pages/admin_editannouncement',$data);
+            $this->load->view('templates/admin_footer');
+        }
         
     }
 
