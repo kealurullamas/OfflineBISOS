@@ -5,17 +5,26 @@
         <h3 class="panel-title">Edit Announcement</h3>
         </div>
         <div class="panel-body">
-            <form>
+            <?php echo form_open('admins/updateannouncement/'.$row['id']); ?>
+                <?php if($this->session->flashdata('error')): ?>
+                <span class="text-danger"><?php echo $this->session->flashdata('error') ?></span>
+                <?php endif;?>
                 <div class="form-group">
+                <?php if($this->session->flashdata('error')): ?>
+                <span class="text-danger">*</span>
+                <?php endif; ?>
                 <label>Announcement Title</label>
-                <input type="text" class="form-control" value="<?php echo $row['title'] ?>">
+                <input type="text" name="announcementtitle" class="form-control" value="<?php echo $row['title'] ?>">
                 </div>
                 <div class="form-group">
+                <?php if($this->session->flashdata('error')): ?>
+                <span class="text-danger">*</span>
+                <?php endif; ?>
                 <label>Announcement Body</label>
-                <textarea name="newsbody" class="form-control"><?php echo $row['body']?></textarea>
+                <textarea name="announcementbody" class="form-control"><?php echo $row['body']?></textarea>
                 </div>
                 <input type="submit" class="btn btn-default" value="Update">
-            </form>
+            <?php echo form_close(); ?>
         </div>
     </div>
 </div>

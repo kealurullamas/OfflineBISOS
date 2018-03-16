@@ -96,7 +96,7 @@
                 return false;
             }
         }
-
+        
         public function delete_news($id)
         {
             $this->db->where('id', $id);
