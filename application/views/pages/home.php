@@ -139,7 +139,6 @@
                 </div>
                 </div>
             </div>
-<<<<<<< HEAD
         </div>
         <!--end of gallery-->
   </div>
@@ -179,32 +178,3 @@
   </div>
 </div>
 <br>
-=======
-          </div><!-- End Item -->
-          <?php endif?>
-        <?php endforeach?>
-
-      </div><!-- End Carousel Inner -->
-
-    <ul class="list-group col-sm-4">
-      <li data-target="#myCarousel" data-slide-to="0" class="list-group-item active"><h6>Lorem ipsum dolor sit amet consetetur sadipscing</h6></li>
-      <li data-target="#myCarousel" data-slide-to="1" class="list-group-item"><h6>Lorem ipsum dolor sit amet consetetur sadipscing</h6></li>
-      <li data-target="#myCarousel" data-slide-to="2" class="list-group-item"><h6>Lorem ipsum dolor sit amet consetetur sadipscing</h6></li>
-      <li data-target="#myCarousel" data-slide-to="3" class="list-group-item"><h6>Lorem ipsum dolor sit amet consetetur sadipscing</h6></li>
-      <li data-target="#myCarousel" data-slide-to="4" class="list-group-item"><h6>Lorem ipsum dolor sit amet consetetur sadipscing</h6></li>
-      <li data-target="#myCarousel" data-slide-to="4" class="list-group-item"><h6>Lorem ipsum dolor sit amet consetetur sadipscing</h6></li>
-    </ul>
-
-      <!-- Controls -->
-      <div class="carousel-controls">
-          <a class="left carousel-control" href="#myCarousel" data-slide="prev">
-            <span class="glyphicon glyphicon-chevron-left"></span>
-          </a>
-          <a class="right carousel-control" href="#myCarousel" data-slide="next">
-            <span class="glyphicon glyphicon-chevron-right"></span>
-          </a>
-      </div>
-
-    </div><!-- End Carousel -->
-</div>
->>>>>>> a843a9f9039ef06629810c7aad5efeb646736059

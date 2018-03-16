@@ -23,14 +23,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 | a PHP script and you can easily do that on your own.
 |
 */
-<<<<<<< HEAD
-// $config['base_url'] = 'http://localhost/barangayinfosys';
-
 $config['base_url'] = 'http://localhost:8080/BarangayIS';
-
-=======
-$config['base_url'] = 'http://localhost/BarangayIS';
->>>>>>> a843a9f9039ef06629810c7aad5efeb646736059
 
 /*
 |--------------------------------------------------------------------------

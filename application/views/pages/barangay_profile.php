@@ -1,8 +1,9 @@
 <div class="container">
     <br>
     <h1 style="" align="left">
-        <span id="sites-page-title" dir="ltr" tabindex="-1" style="outline: none"><b>Barangay Profile</b></span>
+        <span tabindex="-1" style="outline: none"><b>Barangay Profile</b></span>
     </h1>
+    <img
     <span style="font-size:12.0pt;line-height:150%;font-family:Arial, Helvetica, sans-serif">
         <p align=justify>
             &emsp;&emsp;Ang Barangay Malaban ay natagpuan ng mga mananakop na Espanyol noong ika-huling bahagi 
