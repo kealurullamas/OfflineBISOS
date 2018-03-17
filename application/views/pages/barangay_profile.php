@@ -1,16 +1,23 @@
 <div class="container">
     <br>
     <h1 style="" align="left">
-        <span id="sites-page-title" dir="ltr" tabindex="-1" style="outline: none"><b>Barangay Profile</b></span>
+        <span tabindex="-1" style="outline: none"><b>Barangay Profile</b></span>
     </h1>
     <span style="font-size:12.0pt;line-height:150%;font-family:Arial, Helvetica, sans-serif">
+        <h3 align="left">
+            History
+        </h3>
         <p align=justify>
             &emsp;&emsp;Ang Barangay Malaban ay natagpuan ng mga mananakop na Espanyol noong ika-huling bahagi 
             ng buwan ng <b>Hunyo taon 1521</b> sa pangunguna ni <b>Juan De Salcedo</b> at isang pari na nagngangalang 
             <b>Padre Alonzo Alvarado</b>. Mula sa kanilang paglalayag buhat sa Morong, Rizal. Ang mga unang mamamayan 
             ng Barangay Malaban ay nakipaglaban sa mga mananakop ngunit sila ay nagapi at ang barangay ay pinangalang 
             <b>MANLALABAN</b> na sa kalaunan ay naging <b>Barangay Malaban</b>.
-            <br><br>
+        </p>
+        <h3 align="left">
+            Information
+        </h3>
+        <p align=justify>
             &emsp;&emsp;Ang Barangay Malaban ay maituturing na isa sa may pinakamaraming populasyon na barangay sa Bayan 
             ng Biñan, Laguna na may bilang na 36,404 ayon sa huling talaan ngayong taon 2013. Ang barangay Malaban ay isa 
             rin sa maraming barangay na may pinakamaraming botante (voting population) na 16,496 ayon din sa huling talaan 
@@ -26,7 +33,11 @@
             pag-eempleyo sa iba pang mga bahay kalakal sa iba't ibang karatig lugar ng bayan ng Biñan, Laguna. Marami narin 
             ang propesyonal sa Barangay Malaban. May mga nagtapos ng medisina, abogasya, inhinyeriya, pagka-guro at iba pang 
             mga kurso sa kolehiyo.
-            <br><br>
+        </p>
+        <h3 align="left">
+            Achievements
+        </h3>
+        <p align=justify>
             &emsp;&emsp;Ang Barangay Malaban ay masasabing isang maunlad na barangay dahil kumpleto ito sa mga pasilidad na 
             lubhang mahalaga sa pangaraw-araw na gawain ng mga mamamayan katulad ng elektrisidad, komunikasyon, mga poso na 
             pinagkukuhanan ng malinis na tubig, barangay hall, mga barangay health center at mga barangay day care center. 

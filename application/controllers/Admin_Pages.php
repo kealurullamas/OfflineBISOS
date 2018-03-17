@@ -97,6 +97,30 @@
             $this->load->view('admin_pages/admin_editannouncement',$data);
             $this->load->view('templates/admin_footer');
         }
+
+        public function addcitizen(){
+            if(empty($this->session->userdata('username'))){
+                redirect('admin', 'refresh');
+            }
+            $data['citizens'] = $this->citizen_model->get_citizens();
+
+            $this->load->view('templates/admin_header');
+            $this->load->view('admin_pages/admin_addcitizen', $data);
+            $this->load->view('templates/admin_footer');
+        }
+
+        public function citizens(){
+            if(empty($this->session->userdata('username'))){
+                redirect('admin', 'refresh');
+            }
+
+            $data['citizens'] = $this->citizen_model->get_citizens();
+
+            $this->load->view('templates/admin_header');
+            $this->load->view('admin_pages/admin_citizens', $data);
+            $this->load->view('templates/admin_footer');
+
+        }
         
     }
 
