@@ -49,6 +49,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 | Examples:	my-controller/index	-> my_controller/index
 |		my-controller/my-method	-> my_controller/my_method
 */
+$route['genealogy']='genealogycontroller/index';
 $route['galleries/getAll']='galleries/getAll';
 $route['galleries/create']='galleries/create';
 
