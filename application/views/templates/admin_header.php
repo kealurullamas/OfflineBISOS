@@ -31,13 +31,13 @@
       <ul class="navbar-nav navbar-sidenav" id="exampleAccordion">
         <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Dashboard">
           <a class="nav-link" href="<?php echo base_url('Admin_Pages/view');?>">
-            <i class="fa fa-fw fa-dashboard"></i>
-            <span class="nav-link-text">Dashboard</span>
+            <i class="fa fa-fw fa-home"></i>
+            <span class="nav-link-text">Home</span>
           </a>
         </li>
         <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Announcement">
           <a class="nav-link" href="<?php echo base_url('Admin_Pages/announcements'); ?>">
-            <i class="fa fa-fw fa-table"></i>
+            <i class="fa fa-fw fa-bullhorn"></i>
             <span class="nav-link-text">Announcements</span>
           </a>
         </li>
@@ -158,7 +158,7 @@
            
     
         </li>
-        <li class="nav-item">
+        <!-- <li class="nav-item">
           <form class="form-inline my-2 my-lg-0 mr-lg-2">
             <div class="input-group">
               <input class="form-control" type="text" placeholder="Search for...">
@@ -169,7 +169,7 @@
               </span>
             </div>
           </form>
-        </li>
+        </li> -->
         <li class="nav-item">
             <a class="btn btn-link" href="#">ADMIN NAME</a>
         </li>
@@ -183,13 +183,13 @@
 <div class="content-wrapper">
     <div class="container-fluid">
 <br><br>
-<!-- Breadcrumbs-->
+<!-- Breadcrumbs
       <ol class="breadcrumb">
         <li class="breadcrumb-item">
           <a href="#">Dashboard</a>
         </li>
         <li class="breadcrumb-item active">My Dashboard</li>
-      </ol>
+      </ol> -->
 
       <!-- Logout Modal-->
       <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="logoutLabel" aria-hidden="true">
@@ -211,23 +211,5 @@
             </div>
       </div>
 
-      <!-- Logout Modal-->
-      <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="logoutLabel" aria-hidden="true">
-            <div class="modal-dialog" role="document">
-              <div class="modal-content">
-                <div class="modal-header">
-                  <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
-                  <button class="close" type="button" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">×</span>
-                  </button>
-                </div>
-                <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
-                <div class="modal-footer">
-                  <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-                  <a class="btn btn-primary" href="<?php echo base_url()?>admins/logout">Logout</a>
-                  
-                </div>
-              </div>
-            </div>
-      </div>
+      
       

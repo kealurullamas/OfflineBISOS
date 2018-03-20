@@ -1,9 +1,15 @@
-
-
+        <?php if($this->session->flashdata('success')): ?>
+        <div class="alert alert-success alert-dismissible fade show" role="alert">
+            <strong>Updated Successfully!</strong>
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+                </button>
+        </div>
+        <?php endif;?>
          <!--DataTables Card-->
         <div class="card mb-3">
         <div class="card-header">
-            <i class="fa fa-table"></i> News Table</div>
+            <i class="fa fa-table"></i> News List</div>
         <div class="card-body">
             <div class="table-responsive">
             <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">

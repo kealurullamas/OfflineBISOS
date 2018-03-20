@@ -98,6 +98,17 @@
             $this->load->view('templates/admin_footer');
         }
 
+        public function editcitizen($id){
+            if(empty($this->session->userdata('username'))){
+                redirect('admin', 'refresh');
+            }
+                $data['row'] = $this->citizen_model->get_citizen($id);
+
+                $this->load->view('templates/admin_header');
+                $this->load->view('admin_pages/admin_editcitizen',$data);
+                $this->load->view('templates/admin_footer');
+        }
+
         public function addcitizen(){
             if(empty($this->session->userdata('username'))){
                 redirect('admin', 'refresh');
