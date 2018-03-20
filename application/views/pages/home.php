@@ -53,7 +53,7 @@
         <?php if(!empty($News[4])):?>
             <li data-target="#myCarousel" data-slide-to="4" class="list-group-item"><h6><?php echo $News[4]['title'];?></h6></li>
             <?php endif?>
-        <?php if(!empty($News[4])):?>
+        <?php if(!empty($News[5])):?>
             <li data-target="#myCarousel" data-slide-to="5" class="list-group-item"><h6><?php echo $News[5]['title'];?></h6></li>
         <?php endif?>
         
@@ -70,74 +70,76 @@
 
         </div><!-- End Carousel -->
         <hr>
-
+        <br>
         <!-- Start Gallery -->
          <div class="container">
 
             <h1 class="my-4 text-center text-lg-left">Barangay Gallery</h1>
 
             <div class="row text-center text-lg-left">
-
+                <?php foreach($Galleries as $gallery):?>
                 <div class="col-lg-3 col-md-4 col-xs-6">
+                    <a href="<?php echo base_url('Galleries/view/'.$gallery['slug']);?>" class="d-block mb-4 h-100">
+                        <img class="img-fluid img-thumbnail" src="<?php echo base_url('assets/img/'.$gallery['image']);?>" alt="">
+                    </a>
+                    </div>
+                <?php endforeach?>
+                <a href="#" class="btn btn-primary">More</a>
+                <!-- <div class="col-lg-3 col-md-4 col-xs-6">
                 <a href="#" class="d-block mb-4 h-100">
-                    <img class="img-fluid img-thumbnail" src="http://placehold.it/400x300" alt="">
+                    <img class="img-fluid img-thumbnail" src="<?php echo base_url('assets/img/malaban.jpg');?>" alt="">
                 </a>
                 </div>
                 <div class="col-lg-3 col-md-4 col-xs-6">
                 <a href="#" class="d-block mb-4 h-100">
-                    <img class="img-fluid img-thumbnail" src="http://placehold.it/400x300" alt="">
+                    <img class="img-fluid img-thumbnail" src="<?php echo base_url('assets/img/malaban.jpg');?>" alt="">
                 </a>
                 </div>
                 <div class="col-lg-3 col-md-4 col-xs-6">
                 <a href="#" class="d-block mb-4 h-100">
-                    <img class="img-fluid img-thumbnail" src="http://placehold.it/400x300" alt="">
+                    <img class="img-fluid img-thumbnail" src="<?php echo base_url('assets/img/malaban.jpg');?>" alt="">
                 </a>
                 </div>
                 <div class="col-lg-3 col-md-4 col-xs-6">
                 <a href="#" class="d-block mb-4 h-100">
-                    <img class="img-fluid img-thumbnail" src="http://placehold.it/400x300" alt="">
+                    <img class="img-fluid img-thumbnail" src="<?php echo base_url('assets/img/church.jpg');?>" alt="">
                 </a>
                 </div>
                 <div class="col-lg-3 col-md-4 col-xs-6">
                 <a href="#" class="d-block mb-4 h-100">
-                    <img class="img-fluid img-thumbnail" src="http://placehold.it/400x300" alt="">
+                    <img class="img-fluid img-thumbnail" src="<?php echo base_url('assets/img/church.jpg');?>" alt="">
                 </a>
                 </div>
                 <div class="col-lg-3 col-md-4 col-xs-6">
                 <a href="#" class="d-block mb-4 h-100">
-                    <img class="img-fluid img-thumbnail" src="http://placehold.it/400x300" alt="">
+                    <img class="img-fluid img-thumbnail" src="<?php echo base_url('assets/img/church.jpg');?>" alt="">
                 </a>
                 </div>
                 <div class="col-lg-3 col-md-4 col-xs-6">
                 <a href="#" class="d-block mb-4 h-100">
-                    <img class="img-fluid img-thumbnail" src="http://placehold.it/400x300" alt="">
+                    <img class="img-fluid img-thumbnail" src="<?php echo base_url('assets/img/church.jpg');?>" alt="">
                 </a>
                 </div>
                 <div class="col-lg-3 col-md-4 col-xs-6">
                 <a href="#" class="d-block mb-4 h-100">
-                    <img class="img-fluid img-thumbnail" src="http://placehold.it/400x300" alt="">
+                    <img class="img-fluid img-thumbnail" src="<?php echo base_url('assets/img/barney.png');?>" alt="">
                 </a>
                 </div>
                 <div class="col-lg-3 col-md-4 col-xs-6">
                 <a href="#" class="d-block mb-4 h-100">
-                    <img class="img-fluid img-thumbnail" src="http://placehold.it/400x300" alt="">
+                    <img class="img-fluid img-thumbnail" src="<?php echo base_url('assets/img/barney.png');?>" alt="">
                 </a>
                 </div>
                 <div class="col-lg-3 col-md-4 col-xs-6">
                 <a href="#" class="d-block mb-4 h-100">
-                    <img class="img-fluid img-thumbnail" src="http://placehold.it/400x300" alt="">
+                    <img class="img-fluid img-thumbnail" src="<?php echo base_url('assets/img/barney.png');?>" alt="">
                 </a>
                 </div>
                 <div class="col-lg-3 col-md-4 col-xs-6">
                 <a href="#" class="d-block mb-4 h-100">
-                    <img class="img-fluid img-thumbnail" src="http://placehold.it/400x300" alt="">
+                    <img class="img-fluid img-thumbnail" src="<?php echo base_url('assets/img/barney.png');?>" alt="">
                 </a>
-                </div>
-                <div class="col-lg-3 col-md-4 col-xs-6">
-                <a href="#" class="d-block mb-4 h-100">
-                    <img class="img-fluid img-thumbnail" src="http://placehold.it/400x300" alt="">
-                </a>
-                </div>
+                </div> -->
                 </div>
             </div>
         </div>
@@ -145,7 +147,10 @@
   </div>
   <div class="col-6 col-md-1 sidebar-offcanvas" id="sidebar">
   <br>
-        <div class="card" style="width: 22rem;">
+  <br>
+  <br>
+  <br>
+        <div class="card" style="width: 19rem;">
         <div class="card-body">
         <h5>Announcements</h5>
             <div class="list-group">
@@ -162,7 +167,7 @@
                 <?php endforeach;?>
             </div>
             <br>
-            <a href="#" class="btn btn-primary">More</a>
+            <a href="<?php echo base_url('announcements/viewAll');?>" class="btn btn-primary">More</a>
         </div>
         </div>
 
