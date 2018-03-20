@@ -9,7 +9,7 @@
         <hr>
         <hr>
         
-        <?php print_r($relations)?>
+
          <!--DataTables Card-->
          <div class="card mb-3">
         <div class="card-header">
@@ -48,9 +48,9 @@
                     <td style="width: 30%" align="center">
                         <button type="button" class="btn btn-success btn-sm view-profile" data-citizens='<?php echo json_encode($relations);?>' 
                         data-profile="<?php echo htmlspecialchars(json_encode($profile = [ 'id' => $citizen['id'], 'lastname' => $citizen['lastname'], 'firstname' => $citizen['firstname'],
-                        'middlename' => $citizen['middlename'], 'address' => $citizen['address'], 'contact' => $citizen['contact'] ]));?>">
+                        'middlename' => $citizen['middlename'], 'address' => $citizen['address'], 'contact' => $citizen['contact'], 'name_slug'=>$citizen['name_slug'] ]));?>">
                         
-                        <i class="fa fa-fw fa-user-o"></i> Profile</button>
+                        <i class="fa fa-fw fa-user-o"></i> Profiles</button>
                         <a href="<?php echo base_url('admin_pages/editcitizen/'.$citizen['id']);?>" class="btn btn-info btn-sm" role="button" aria-pressed="true"><i class="fa fa-fw fa-edit"></i> Edit</a>
                         <button type="button" class="btn btn-danger btn-sm confirm-delete" data-url="<?php echo site_url('admins/deletecitizen/')?>" data-id="<?php echo $citizen['id'];?>"><i class="fa fa-fw fa-trash-o"></i> Delete</button>
                      </td>

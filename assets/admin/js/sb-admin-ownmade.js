@@ -78,24 +78,30 @@ $(document).ready(function(){
             $('#middlename').val(profile['middlename']);
             $('#address').val(profile['address']);
             $('#contact').val(profile['contact']);
-            
+            console.log("ma name is"+profile['name_slug']);
             var html = '';
             for(var i = 0; i < citizens.length; i++){
-            // html += '<tr><td>' + citizens[i] + 
-            //         '</td><td>' + citizens[i].firstname +
-            //         '</td><td>' + citizens[i].middlename +
-            //         '</td><td>' + citizens[i].gender +
-            //         '</td><td>' + citizens[i].address +
-            //         '</td><td>' + citizens[i].contact + '</td></tr>';
+               
+                if(profile['name_slug']==citizens[i][2]){
+            html += '<tr><td>' + citizens[i][0]['lastname'] + 
+                    '</td><td>' + citizens[i][0]['firstname'] +
+                    '</td><td>' + citizens[i][0]['middlename'] +
+                    '</td><td>' + citizens[i][0]['gender'] +
+                    '</td><td>' + citizens[i][0]['address'] +
+                    '</td><td>' + citizens[i][0]['contact'] + 
+                    '</td><td>' + citizens[i][1] +'</td></tr>';
+                }
             }
-            citizens.forEach(element => {
-                html += '<tr>a<td>' + element[0] + 
-                '</td>a<td>' + citizens[i].firstname +
-                '</td><td>' + citizens[i].middlename +
-                '</td><td>' + citizens[i].gender +
-                '</td><td>' + citizens[i].address +
-                '</td><td>' + citizens[i].contact + '</td></tr>';
-            });
+            // citizens.forEach(element => {
+            //     // console.log(element[0]['name_slug']);
+            //     // console.log(element[1]);
+            //     html += '<tr><td>' + element[0]['lastname'] + 
+            //     '</td><td>' + citizens[i].firstname +
+            //     '</td><td>' + citizens[i].middlename +
+            //     '</td><td>' + citizens[i].gender +
+            //     '</td><td>' + citizens[i].address +
+            //     '</td><td>' + citizens[i].contact + '</td></tr>';
+            // });
             $('#familyTable tbody').append(html);  
         // var OLDTOYOUNGINDIRECTFAMILYRELATIONMALE = [["Brother","Nephew","Grand-Nephew","Great-Grand-Nephew","2nd Great-Grand-Nephew", "3rd Great-Grand-Nephew", "4th Great-Grand-Nephew", "5th Great-Grand-Nephew" ],
         // [ "Nephew", "First Cousin","First Cousin Once Removed","First Twice Removed","First Cousin 3x Removed","First Cousin 4x Removed", "First Cousin 5x Removed", "First Cousin 6x Removed" ],

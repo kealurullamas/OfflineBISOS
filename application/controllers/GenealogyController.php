@@ -1,35 +1,47 @@
 <?php
     class GenealogyController extends CI_Controller
     {
+        //check if user has session
         public function citizens(){
             if(empty($this->session->userdata('username'))){
                 redirect('admin', 'refresh');
             }
 
+            //declare relations arraqy for putting all relationships
             $relations=[];    
+            //get all citizen from database
             $citizen=$this->citizen_model->get_citizens();
-            $firstperson='Bonifacio Sanchez';
-            foreach($citizen as $people){
-                if($firstperson!=$people['name_slug']){
-                    // $secondperson='Mutya Rullamas';
-                    $tree1=$this->supply($citizen,$firstperson);
-                    $tree2=$this->supply($citizen,$people['name_slug']);
-                
-                    $listlevelperson=$this->checkRelationship($this->supply($citizen,$firstperson),$this->supply($citizen,$people['name_slug']));
-                    $relationarray=$this->GetRelationship($tree2[0][0]['gender'], $listlevelperson[0], $listlevelperson[2], $listlevelperson[3]['name_slug'],$tree1);
-            
-                    if(!empty($relationarray))
-                    {
-                        array_push($relations,array($people,$relationarray));
+            $firstperson='';
+            //traverse through the list of citizens from the database: this is for the firstperson
+            foreach($citizen as $firstper)
+            {
+                //traverse through the list of citizens from the database: this is for the secondperson
+                foreach($citizen as $people){
+                  //in this loop we generate available relationships among citizen
+                    if($firstper['name_slug']!=$people['name_slug']){
+                        $tree1=$this->supply($citizen,$firstper['name_slug']);
+                        $tree2=$this->supply($citizen,$people['name_slug']);
+                        
+                        $listlevelperson=$this->checkRelationship($this->supply($citizen,$firstper['name_slug']),$this->supply($citizen,$people['name_slug']));
+                        if(!empty($listlevelperson)){
+                            $relationarray=$this->GetRelationship($tree2[0][0]['gender'], $listlevelperson[0], $listlevelperson[2], $listlevelperson[3]['name_slug'],$tree1);
+                            $firstperson=$firstper['name_slug'];
+                            if(!empty($relationarray))
+                            {
+                                //push all relationship to relations array: if it exist
+                                array_push($relations,array($people,$relationarray,$firstperson));
+                            }
+                        }
                     }
                 }
-
-
             }
+
+            //put it on the data array
             $data=[
                 'relations'=>$relations,
                 'citizens'=>$this->citizen_model->get_citizens(),
             ];
+            //load the view
             $this->load->view('templates/admin_header');
             $this->load->view('admin_pages/admin_citizens', $data);
             $this->load->view('templates/admin_footer');
@@ -42,36 +54,30 @@
             // ];
             $relations=[];    
             $citizen=$this->citizen_model->get_citizens();
-            $firstperson='Bonifacio Sanchez';
-            foreach($citizen as $people){
-                if($firstperson!=$people['name_slug']){
-                    // $secondperson='Mutya Rullamas';
-                    $tree1=$this->supply($citizen,$firstperson);
-                    $tree2=$this->supply($citizen,$people['name_slug']);
-                
-                    $listlevelperson=$this->checkRelationship($this->supply($citizen,$firstperson),$this->supply($citizen,$people['name_slug']));
-                    $relationarray=$this->GetRelationship($tree2[0][0]['gender'], $listlevelperson[0], $listlevelperson[2], $listlevelperson[3]['name_slug'],$tree1);
-            
-                    if(!empty($relationarray))
-                    {
-                        array_push($relations,array($people,$relationarray));
+            $firstperson='';
+            foreach($citizen as $firstper)
+            {
+                foreach($citizen as $people){
+                  
+                    if($firstper['name_slug']!=$people['name_slug']){
+                        $tree1=$this->supply($citizen,$firstper['name_slug']);
+                        $tree2=$this->supply($citizen,$people['name_slug']);
+                    
+                        $listlevelperson=$this->checkRelationship($this->supply($citizen,$firstper['name_slug']),$this->supply($citizen,$people['name_slug']));
+                        if(!empty($listlevelperson)){
+                            $relationarray=$this->GetRelationship($tree2[0][0]['gender'], $listlevelperson[0], $listlevelperson[2], $listlevelperson[3]['name_slug'],$tree1);
+                            $firstperson=$firstper['name_slug'];
+                            if(!empty($relationarray))
+                            {
+                                array_push($relations,array($people,$relationarray,$firstperson));
+                            }
+                        }
                     }
                 }
-
-
             }
-            // $firstperson='Kealu Rullamas';
-            // $secondperson='Mutya Rullamas';
-            // $tree1=$this->supply($citizen,$firstperson);
-            // $tree2=$this->supply($citizen,$secondperson);
-    
-            // $listlevelperson=$this->checkRelationship($this->supply($citizen,$firstperson),$this->supply($citizen,$secondperson));
-            // $relationarray=$this->GetRelationship($tree2[0][0]['gender'], $listlevelperson[0], $listlevelperson[2], $listlevelperson[3]['name_slug'],$tree1);
-
-            // print_r($relations);
             foreach($relations as $relation)
             {
-                echo $relation[0]['name_slug'].' '.$relation[1];
+                echo $relation[2].': '.$relation[0]['name_slug'].' '.$relation[1];
             }
             $data=['relations'=>$relations];
             $this->load->view('templates/header');
@@ -281,13 +287,21 @@
             ];
 
             $relationship = "";
-
+            
             if ($genderSecondPerson=="Male")
             {
+                if($firstPersonLevel==0&&$secondPersonLevel==0)
+                {
+                    return "Brother";
+                }
                 $relationship = $this->Relationship($firstPersonLevel, $secondPersonLevel, $person2, $YOUNGTOOLDDIRECTFAMILYRELATIONMALE, $OLDTOYOUNGDIRECTFAMILYRELATIONMALE, $YOUNGTOOLDINDIRECTFAMILYRELATIONMALE, $OLDTOYOUNGINDIRECTFAMILYRELATIONMALE,$directtree);
             }
             else // Female  
             {
+                if($firstPersonLevel==0&&$secondPersonLevel==0)
+                {
+                    return "Sister";
+                }
                 $relationship = $this->Relationship($firstPersonLevel, $secondPersonLevel, $person2, $YOUNGTOOLDDIRECTFAMILYRELATIONFEMALE, $OLDTOYOUNGDIRECTFAMILYRELATIONFEMALE, $YOUNGTOOLDINDIRECTFAMILYRELATIONFEMALE, $OLDTOYOUNGINDIRECTFAMILYRELATIONFEMALE,$directtree);
             }
             return $relationship;
