@@ -61,8 +61,7 @@
         
             $this->form_validation->set_rules('newstitle','Title','required');
             $this->form_validation->set_rules('newsbody','Body','required');
-                if($this->form_validation->run()===FALSE)
-                {
+                if($this->form_validation->run()===FALSE){
                     $data = ['error' => '* field is required'];
                     $this->session->set_flashdata($data);
                     // $this->load->view('templates/admin_header');
@@ -72,12 +71,102 @@
 
                 }
                 else {
-                    $this->news_model->create_news();
-                    redirect('admin_pages/view');
+                    if($this->news_model->create_news()){
+                        redirect('admin_pages/addnews');
+                    }
+                    else{
+                        $data = ['errorfiletype' => 'Invalid filetype'];
+                        $this->session->set_flashdata($data);  
+                        redirect('admin_pages/addnews', $data, 'refresh');
+                    }
+                    
+               
                 }
             
             }
 
-        
+            public function deletenews($rowid){
+                    // $this->load->view('templates/admin_header');
+                    // $this->load->view('admin_pages/view');
+                    // $this->load->view('templates/admin_footer');
+                    echo json_encode(array("status" => TRUE));
+                    $this->news_model->delete_news($rowid);
+                    
+            }
+
+            
+
+            public function createannouncement(){
+                $this->form_validation->set_rules('announcementtitle','Title', 'required');
+                $this->form_validation->set_rules('announcementbody', 'Body', 'required');
+                if($this->form_validation->run()){
+                    $this->announcements_model->create_announcement();
+                    redirect('admin_pages/addannouncement');
+                }
+                else{
+                    $data = ['error' => '* field is required'];
+                    $this->session->set_flashdata($data);
+                    redirect('admin_pages/addannouncement', $data, 'refresh');
+                }
+            }
+
+            public function deleteannouncement($id){
+                echo json_encode(array("status" => TRUE));
+                $this->announcements_model->delete_announcement($id);
+            }
+
+            public function updatenews($id){
+                 $this->form_validation->set_rules('newstitle', 'Title', 'required');
+                 $this->form_validation->set_rules('newsbody', 'Body', 'required');
+
+                 if($this->form_validation->run()){
+                    if($this->news_model->update_news($id)){
+                        redirect('admin_pages/news', 'refresh');
+                    }
+                }
+                else{
+                    $data = ['error' => '*field is required'];
+                    $this->session->set_flashdata($data);
+                    // $this->load->view('templates/admin_header');
+                    // $this->load->view('admin_pages/admin_editnews',$data);
+                    // $this->load->view('templates/admin_footer');
+                    redirect('admin_pages/editnews/'.$id, $data);
+                }
+                
+                
+            }
+
+            public function updateannouncement($id){
+                $this->form_validation->set_rules('announcementtitle', 'Title', 'required');
+                $this->form_validation->set_rules('announcementbody', 'Body', 'required');
+                if($this->form_validation->run()){
+                    $this->announcements_model->update_announcement($id);
+                    redirect('admin_pages/announcements', 'refresh');
+                }
+                else{
+                    $data = ['error' => '*field is required'];
+                    $this->session->set_flashdata($data);
+                    redirect('admin_pages/editannouncement/'.$id, $data);
+                }                
+            }
+
+            public function addcitizen(){
+                $lastname = $this->input->post('lastname');
+                $firstname = $this->input->post('firstname');
+                $middlename = $this->input->post('middlename');
+                $contact = $this->input->post('contact');
+                $address = $this->input->post('address');
+
+                $this->citizen_model->add_citizen($lastname, $firstname, $middlename, $contact, $address);
+                redirect('admin_pages/addcitizen', 'refresh');
+            }
+
+            public function updatecitizen(){
+
+            }   
+            
+            public function deletecitizen(){
+                
+            }
     }
 ?>

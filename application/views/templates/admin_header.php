@@ -16,6 +16,7 @@
   <link href="<?php echo base_url(); ?>assets/admin/vendor/datatables/dataTables.bootstrap4.css" rel="stylesheet">
   <!-- Custom styles for this template-->
   <link href="<?php echo base_url(); ?>assets/admin/css/sb-admin.css" rel="stylesheet">
+  
 </head>
 
 <body>
@@ -34,16 +35,10 @@
             <span class="nav-link-text">Dashboard</span>
           </a>
         </li>
-        <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Charts">
-          <a class="nav-link" href="charts.html">
-            <i class="fa fa-fw fa-area-chart"></i>
-            <span class="nav-link-text">Charts</span>
-          </a>
-        </li>
-        <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Tables">
-          <a class="nav-link" href="tables.html">
+        <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Announcement">
+          <a class="nav-link" href="<?php echo base_url('Admin_Pages/announcements'); ?>">
             <i class="fa fa-fw fa-table"></i>
-            <span class="nav-link-text">Tables</span>
+            <span class="nav-link-text">Announcements</span>
           </a>
         </li>
         <li class="nav-item" data-toggle="tooltip" data-placement="right" title="News">
@@ -51,22 +46,23 @@
             <i class="fa fa-fw fa-newspaper-o"></i>
             <span class="nav-link-text">News</span>
           </a>
+         
         </li>
         <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Components">
           <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#collapseComponents" data-parent="#exampleAccordion">
-            <i class="fa fa-fw fa-wrench"></i>
-            <span class="nav-link-text">Components</span>
+            <i class="fa fa-fw fa-users"></i>
+            <span class="nav-link-text">Citizens</span>
           </a>
           <ul class="sidenav-second-level collapse" id="collapseComponents">
             <li>
-              <a href="navbar.html">Navbar</a>
+              <a href="<?php echo base_url('admin_pages/citizens') ?>">View Citizens</a>
             </li>
             <li>
-              <a href="cards.html">Cards</a>
+              <a href="<?php echo base_url('admin_pages/addcitizen') ?>">Add Citizen</a>
             </li>
           </ul>
         </li>
-        <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Example Pages">
+        <!-- <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Example Pages">
           <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#collapseExamplePages" data-parent="#exampleAccordion">
             <i class="fa fa-fw fa-file"></i>
             <span class="nav-link-text">Example Pages</span>
@@ -85,8 +81,8 @@
               <a href="blank.html">Blank Page</a>
             </li>
           </ul>
-        </li>
-        <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Menu Levels">
+        </li> -->
+        <!-- <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Menu Levels">
           <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#collapseMulti" data-parent="#exampleAccordion">
             <i class="fa fa-fw fa-sitemap"></i>
             <span class="nav-link-text">Menu Levels</span>
@@ -116,13 +112,13 @@
               </ul>
             </li>
           </ul>
-        </li>
-        <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Link">
+        </li> -->
+        <!-- <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Link">
           <a class="nav-link" href="#">
             <i class="fa fa-fw fa-link"></i>
             <span class="nav-link-text">Link</span>
           </a>
-        </li>
+        </li> -->
       </ul>
       <ul class="navbar-nav sidenav-toggler">
         <li class="nav-item">
@@ -150,17 +146,16 @@
             Create Content
           </a>
           <div class="dropdown-menu" aria-labelledby="contentDropdown">
+             
+            <a class="dropdown-item" href="<?php echo base_url('admin_pages/addannouncement'); ?>">
+              <span class="">Add Announcement</span>
+            </a>
+            <div class="dropdown-divider"></div>
             <a class="dropdown-item" href="<?php echo base_url('admin_pages/addnews'); ?>">
               <span class="">Add News</span>
             </a>
-            <div class="dropdown-divider"></div>
-            <a class="dropdown-item" href="#">
-              <span class="">Add Person</span>
-            </a>
-            <div class="dropdown-divider"></div>
-            <a class="dropdown-item" href="#">
-              <span class="">Add Announcement</span>
-            </a>
+            
+           
     
         </li>
         <li class="nav-item">

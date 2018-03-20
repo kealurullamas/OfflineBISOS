@@ -2,11 +2,10 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <title>Barangay Bert</title>
+  <title>Barangay Malaban</title>
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
   <meta content="" name="keywords">
   <meta content="" name="description">
-
 
   <!-- Favicons -->
   <link href="<?php echo base_url('assets/img/favicon.png')?>" rel="icon">
@@ -42,12 +41,12 @@
 
       <nav id="nav-menu-container">
         <ul class="nav-menu">
-          <li class="menu-active"><a href="<?php echo base_url()?>pages/view/home">Home</a></li>
+          <li class="menu-active"><a href="<?php echo base_url().'Pages/view/home'?>">Home</a></li>
           <li class="menu-has-children"><a href="">About Us</a>
             <ul>
-              <li><a href="<?php echo base_url(); ?>pages/view/mission_and_vision">Mission and Vision</a></li>
-              <li><a href="<?php echo base_url(); ?>barangay_council">Barangay Council</a></li>
-              <li><a href="<?php echo base_url(); ?>barangay_profile">Barangay Profile</a></li>
+              <li><a href="<?php echo base_url().'Pages/view/mission_and_vision'?>">Mission and Vision</a></li>
+              <li><a href="<?php echo base_url().'Pages/view/barangay_council'?>">Barangay Council</a></li>
+              <li><a href="<?php echo base_url().'Pages/view/barangay_profile'?>">Barangay Profile</a></li>
               <li><a href="#">Plans and Programs</a></li>
               <li><a href="#">Financial Reports</a></li>
               <li><a href="#">Contacts</a></li>

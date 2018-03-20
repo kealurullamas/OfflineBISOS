@@ -1,7 +1,7 @@
 
 <div class="container">
   <h2>News Flash</h2>
-  <p>The .table class adds basic styling (light padding and horizontal dividers) to a table:</p>            
+  <!---<p>The .table class adds basic styling (light padding and horizontal dividers) to a table:</p>-->            
   <table class="table">
     <tbody>
       <?php foreach($News as $news): ?>
