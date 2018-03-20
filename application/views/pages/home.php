@@ -53,7 +53,7 @@
         <?php if(!empty($News[4])):?>
             <li data-target="#myCarousel" data-slide-to="4" class="list-group-item"><h6><?php echo $News[4]['title'];?></h6></li>
             <?php endif?>
-        <?php if(!empty($News[4])):?>
+        <?php if(!empty($News[5])):?>
             <li data-target="#myCarousel" data-slide-to="5" class="list-group-item"><h6><?php echo $News[5]['title'];?></h6></li>
         <?php endif?>
         
