@@ -33,6 +33,7 @@
         public function view($slug=null)
         {
             $data=[
+                'title'=>'Announcement',
                 'announcement'=>$this->announcements_model->get_announcement($slug)
             ];
             
@@ -42,7 +43,7 @@
             }
             
             $this->load->view('templates/header');
-            $this->load->view('Announcements/view');
+            $this->load->view('Announcements/view',$data);
             $this->load->view('templates/footer');
         }
     }
