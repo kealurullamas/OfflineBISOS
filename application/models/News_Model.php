@@ -59,7 +59,7 @@
                     'image'=>$this->upload->file_name
                 ];
 
-                $this->db->insert('news',$data);
+                $this->db->insert('News',$data);
             }
         }
         public function delete_news()

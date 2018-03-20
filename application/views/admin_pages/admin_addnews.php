@@ -8,7 +8,7 @@
         <h3 class="panel-title">Add News</h3>
         </div>
         <div class="panel-body">
-        <?php echo form_open('admins/createnews'); ?>
+        <?php echo form_open_multipart('admins/createnews'); ?>
                 <div class="modal-body">
                     <div class="panel-body">
                                 <?php if($this->session->flashdata('error')): ?>
@@ -21,7 +21,7 @@
                                 <span class="text-danger">*</span>
                                 <?php endif; ?>
                                 <label>News Title</label>
-                                <input type="text" name="newstitle"class="form-control">
+                                <input type="text" name="newstitle" class="form-control">
                                 </div>
                                 <div class="form-group">
                                 <?php if($this->session->flashdata('error')): ?>
@@ -34,16 +34,14 @@
                                     <label>Upload Image</label>
                                     <input type="file" name="img" class="form-control-file" id="image_upload">
                                 </div>
-                            
                     </div>
-                
                 </div>
                 
                 <div class="modal-footer">
                   <button type="submit" class="btn btn-primary ">Submit</button>
                 </div>
-                <?php echo form_close(); ?>
+        </form>
             </div>
         </div>
     </div>
-</div>
+

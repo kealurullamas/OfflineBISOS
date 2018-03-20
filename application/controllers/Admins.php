@@ -72,8 +72,8 @@
 
                 }
                 else {
-                $this->news_model->create_news();
-                redirect('admin_pages/view');
+                    $this->news_model->create_news();
+                    redirect('admin_pages/view');
                 }
             
             }
