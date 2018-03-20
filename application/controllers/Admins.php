@@ -72,7 +72,10 @@
                 }
                 else {
                     if($this->news_model->create_news()){
-                        redirect('admin_pages/addnews');
+                        $data = ['success' => TRUE];
+                        $this->session->set_flashdata($data);
+                        redirect('admin_pages/addnews', $data);
+                    
                     }
                     else{
                         $data = ['errorfiletype' => 'Invalid filetype'];
@@ -101,12 +104,15 @@
                 $this->form_validation->set_rules('announcementbody', 'Body', 'required');
                 if($this->form_validation->run()){
                     $this->announcements_model->create_announcement();
+                    $data =['success' => TRUE];
+                    $this->session->set_flashdata($data);
                     redirect('admin_pages/addannouncement');
                 }
                 else{
                     $data = ['error' => '* field is required'];
                     $this->session->set_flashdata($data);
-                    redirect('admin_pages/addannouncement', $data, 'refresh');
+                    redirect('admin_pages/addannouncement', 'refresh');
+                    
                 }
             }
 
@@ -121,6 +127,8 @@
 
                  if($this->form_validation->run()){
                     if($this->news_model->update_news($id)){
+                        $data = ['success' => TRUE];
+                        $this->session->set_flashdata($data);
                         redirect('admin_pages/news', 'refresh');
                     }
                 }
@@ -141,6 +149,8 @@
                 $this->form_validation->set_rules('announcementbody', 'Body', 'required');
                 if($this->form_validation->run()){
                     $this->announcements_model->update_announcement($id);
+                    $data = ['success' => TRUE];
+                    $this->session->set_flashdata($data);
                     redirect('admin_pages/announcements', 'refresh');
                 }
                 else{
@@ -151,22 +161,59 @@
             }
 
             public function addcitizen(){
-                $lastname = $this->input->post('lastname');
-                $firstname = $this->input->post('firstname');
-                $middlename = $this->input->post('middlename');
-                $contact = $this->input->post('contact');
-                $address = $this->input->post('address');
-
-                $this->citizen_model->add_citizen($lastname, $firstname, $middlename, $contact, $address);
-                redirect('admin_pages/addcitizen', 'refresh');
+                $this->form_validation->set_rules('lastname', 'Last Name', 'required');
+                $this->form_validation->set_rules('firstname', 'First Name', 'required');
+                $this->form_validation->set_rules('middlename', 'Middle Name', 'required');
+                $this->form_validation->set_rules('address', 'Address', 'required');
+                
+                if($this->form_validation->run()){
+                    $lastname = $this->input->post('lastname');
+                    $firstname = $this->input->post('firstname');
+                    $middlename = $this->input->post('middlename');
+                    $contact = $this->input->post('contact');
+                    $address = $this->input->post('address');
+                    
+                    $this->citizen_model->add_citizen($lastname, $firstname, $middlename, $contact, $address);
+                    $data = ['success' => TRUE];
+                    $this->session->set_flashdata($data);
+                    redirect('admin_pages/addcitizen', 'refresh');
+                }
+                else{
+                    $data = ['error' => '*field is required'];
+                    $this->session->set_flashdata($data);
+                    redirect('admin_pages/addcitizen');
+                }
+              
             }
 
-            public function updatecitizen(){
+            public function updatecitizen($id){
+                $this->form_validation->set_rules('lastname', 'Last Name', 'required');
+                $this->form_validation->set_rules('firstname', 'First Name', 'required');
+                $this->form_validation->set_rules('middlename', 'Middle Name', 'required');
+                $this->form_validation->set_rules('address', 'Address', 'required');
+                
+                if($this->form_validation->run()){
+                    $lastname = $this->input->post('lastname');
+                    $firstname = $this->input->post('firstname');
+                    $middlename = $this->input->post('middlename');
+                    $address = $this->input->post('address');
+                    $contact = $this->input->post('contact');
 
+                    $this->citizen_model->update_citizen($id, $lastname, $firstname, $middlename, $address, $contact);
+                    $data = ['success' => TRUE];
+                    $this->session->set_flashdata($data);
+                    redirect('admin_pages/citizens');
+                }
+                else{
+                    $data = ['error' => '*field is required'];
+                    $this->session->set_flashdata($data);
+                    redirect('admin_pages/editcitizen/'.$id, $data);
+                }
             }   
             
-            public function deletecitizen(){
-                
+            public function deletecitizen($id){
+                echo json_encode(['status' => TRUE]);
+                $this->citizen_model->delete_citizen($id);
             }
     }
 ?>

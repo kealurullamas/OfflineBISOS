@@ -2,11 +2,20 @@
 
 
 <div class="">
-    <!-- Website Overview -->
+    <?php if($this->session->flashdata('success')): ?>
+    <div class="alert alert-success alert-dismissible fade show" role="alert">
+        <strong>Added Successfully!</strong>
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+            </button>
+    </div>
+    <?php endif;?>
+  
     <div class="panel panel-default">
         <div class="panel-heading">
         <h3 class="panel-title">Add Announcement</h3>
         </div>
+      
         <div class="panel-body">
         <?php echo form_open_multipart('admins/createannouncement'); ?>
                 <div class="modal-body">
@@ -28,17 +37,17 @@
                                 <span class="text-danger">*</span>
                                 <?php endif; ?>
                                 <label>Announcement Body</label>
-                                <textarea name="announcementbody" class="form-control"></textarea>
+                                <textarea name="announcementbody" class="form-control" rows="10"></textarea>
                                 </div>
-                               
+                                <div class="float-right">
+                                <button type="submit" class="btn btn-primary ">Submit</button>
+                                </div>
                             
                     </div>
                 
                 </div>
                 
-                <div class="modal-footer">
-                  <button type="submit" class="btn btn-primary ">Submit</button>
-                </div>
+                
                 <?php echo form_close(); ?>
             </div>
         </div>

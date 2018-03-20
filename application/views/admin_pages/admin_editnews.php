@@ -29,7 +29,9 @@
                     <label>Upload Image</label>
                     <input type="file" name="file" class="form-control-file" id="image_upload">
                 </div>
-                <input type="submit" class="btn btn-default" value="Update">
+                <div class="float-right">
+                <button type="submit" class="btn btn-primary ">Submit</button>
+                </div>
             <?php echo form_close(); ?>
         </div>
     </div>
