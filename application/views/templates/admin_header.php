@@ -55,7 +55,7 @@
           </a>
           <ul class="sidenav-second-level collapse" id="collapseComponents">
             <li>
-              <a href="<?php echo base_url('admin_pages/citizens') ?>">View Citizens</a>
+              <a href="<?php echo base_url('genealogycontroller/citizens') ?>">View Citizens</a>
             </li>
             <li>
               <a href="<?php echo base_url('admin_pages/addcitizen') ?>">Add Citizen</a>

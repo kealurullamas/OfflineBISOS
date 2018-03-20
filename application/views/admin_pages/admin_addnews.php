@@ -45,25 +45,15 @@
                                     <label>Upload Image</label>
                                     <input type="file" name="img" class="form-control-file" id="image_upload">
                                 </div>
-<<<<<<< HEAD
-=======
                                 <div class="float-right">
                                 <button type="submit" class="btn btn-primary">Submit</button>
                                 </div>
                             
->>>>>>> f7af27ede831165d7285433e83994db7cda96eb3
                     </div>
                 </div>
                 
-<<<<<<< HEAD
-                <div class="modal-footer">
-                  <button type="submit" class="btn btn-primary ">Submit</button>
-                </div>
-        </form>
-=======
        
                 <?php echo form_close(); ?>
->>>>>>> f7af27ede831165d7285433e83994db7cda96eb3
             </div>
         </div>
     </div>

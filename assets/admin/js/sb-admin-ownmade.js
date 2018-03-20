@@ -59,7 +59,7 @@ $(document).ready(function(){
 
         var profile = $(this).data('profile');
         var citizens = $(this).data('citizens');
-            
+        
         //var dimensions = { width: 10, height: 15, length: 20 };
 // var keys = $.map( citizens, function( value, key ) {
 //     var r;
@@ -81,13 +81,21 @@ $(document).ready(function(){
             
             var html = '';
             for(var i = 0; i < citizens.length; i++){
-            html += '<tr><td>' + citizens[i].lastname + 
-                    '</td><td>' + citizens[i].firstname +
-                    '</td><td>' + citizens[i].middlename +
-                    '</td><td>' + citizens[i].gender +
-                    '</td><td>' + citizens[i].address +
-                    '</td><td>' + citizens[i].contact + '</td></tr>';
+            // html += '<tr><td>' + citizens[i] + 
+            //         '</td><td>' + citizens[i].firstname +
+            //         '</td><td>' + citizens[i].middlename +
+            //         '</td><td>' + citizens[i].gender +
+            //         '</td><td>' + citizens[i].address +
+            //         '</td><td>' + citizens[i].contact + '</td></tr>';
             }
+            citizens.forEach(element => {
+                html += '<tr>a<td>' + element[0] + 
+                '</td>a<td>' + citizens[i].firstname +
+                '</td><td>' + citizens[i].middlename +
+                '</td><td>' + citizens[i].gender +
+                '</td><td>' + citizens[i].address +
+                '</td><td>' + citizens[i].contact + '</td></tr>';
+            });
             $('#familyTable tbody').append(html);  
         // var OLDTOYOUNGINDIRECTFAMILYRELATIONMALE = [["Brother","Nephew","Grand-Nephew","Great-Grand-Nephew","2nd Great-Grand-Nephew", "3rd Great-Grand-Nephew", "4th Great-Grand-Nephew", "5th Great-Grand-Nephew" ],
         // [ "Nephew", "First Cousin","First Cousin Once Removed","First Twice Removed","First Cousin 3x Removed","First Cousin 4x Removed", "First Cousin 5x Removed", "First Cousin 6x Removed" ],

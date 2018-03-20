@@ -6,14 +6,10 @@
                 </button>
         </div>
         <?php endif;?>
-        <?php print_r($citizens); ?>
-        <?php $ads = json_encode($citizens); ?>
         <hr>
-        <?php print_r($ads) ?>
         <hr>
-        <?php $a = json_decode($ads); print_r($a);?>
         
-
+        <?php print_r($relations)?>
          <!--DataTables Card-->
          <div class="card mb-3">
         <div class="card-header">
@@ -50,7 +46,7 @@
                     <td style="width: 20%"><?php echo word_limiter($citizen['address'], 5); ?></td>
                     <td style="width: 5%"><?php echo $citizen['contact'] ?></td>
                     <td style="width: 30%" align="center">
-                        <button type="button" class="btn btn-success btn-sm view-profile" data-citizens='<?php echo json_encode($citizens);?>' 
+                        <button type="button" class="btn btn-success btn-sm view-profile" data-citizens='<?php echo json_encode($relations);?>' 
                         data-profile="<?php echo htmlspecialchars(json_encode($profile = [ 'id' => $citizen['id'], 'lastname' => $citizen['lastname'], 'firstname' => $citizen['firstname'],
                         'middlename' => $citizen['middlename'], 'address' => $citizen['address'], 'contact' => $citizen['contact'] ]));?>">
                         

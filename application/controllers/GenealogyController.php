@@ -1,6 +1,40 @@
 <?php
     class GenealogyController extends CI_Controller
     {
+        public function citizens(){
+            if(empty($this->session->userdata('username'))){
+                redirect('admin', 'refresh');
+            }
+
+            $relations=[];    
+            $citizen=$this->citizen_model->get_citizens();
+            $firstperson='Bonifacio Sanchez';
+            foreach($citizen as $people){
+                if($firstperson!=$people['name_slug']){
+                    // $secondperson='Mutya Rullamas';
+                    $tree1=$this->supply($citizen,$firstperson);
+                    $tree2=$this->supply($citizen,$people['name_slug']);
+                
+                    $listlevelperson=$this->checkRelationship($this->supply($citizen,$firstperson),$this->supply($citizen,$people['name_slug']));
+                    $relationarray=$this->GetRelationship($tree2[0][0]['gender'], $listlevelperson[0], $listlevelperson[2], $listlevelperson[3]['name_slug'],$tree1);
+            
+                    if(!empty($relationarray))
+                    {
+                        array_push($relations,array($people,$relationarray));
+                    }
+                }
+
+
+            }
+            $data=[
+                'relations'=>$relations,
+                'citizens'=>$this->citizen_model->get_citizens(),
+            ];
+            $this->load->view('templates/admin_header');
+            $this->load->view('admin_pages/admin_citizens', $data);
+            $this->load->view('templates/admin_footer');
+
+        }
         public function index()
         {
             // $data=[
