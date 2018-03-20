@@ -59,9 +59,6 @@
                     'image'=>$this->upload->file_name
                 ];
 
-<<<<<<< HEAD
-                $this->db->insert('News',$data);
-=======
                 $this->db->insert('news',$data);
                 return true;
             }
@@ -97,7 +94,6 @@
             }
             else{
                 return false;
->>>>>>> aa53c00acae027aebb15d5c7ceb5bdfbc0d3bc0a
             }
         }
         
