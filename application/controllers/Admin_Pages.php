@@ -103,7 +103,7 @@
                 redirect('admin', 'refresh');
             }
                 $data['row'] = $this->citizen_model->get_citizen($id);
-
+                $data['citizens'] = $this->citizen_model->get_citizens();
                 $this->load->view('templates/admin_header');
                 $this->load->view('admin_pages/admin_editcitizen',$data);
                 $this->load->view('templates/admin_footer');
@@ -113,10 +113,10 @@
             if(empty($this->session->userdata('username'))){
                 redirect('admin', 'refresh');
             }
-            $data['citizens'] = $this->citizen_model->get_citizens();
+            // $data['citizens'] = $this->citizen_model->get_citizens();
 
             $this->load->view('templates/admin_header');
-            $this->load->view('admin_pages/admin_addcitizen', $data);
+            $this->load->view('admin_pages/admin_addcitizen');
             $this->load->view('templates/admin_footer');
         }
 

@@ -30,6 +30,7 @@
     <!-- ownmade js -->
     <script src="<?php echo base_url('assets/admin/js/sb-admin-ownmade.js'); ?>"></script>
     
+    <script src="<?php echo base_url('assets/admin/combobox/js/bootstrap-combobox.js'); ?>"></script>
   </div>
 </body>
 

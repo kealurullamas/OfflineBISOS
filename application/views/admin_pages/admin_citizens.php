@@ -22,6 +22,7 @@
                     <th>Last Name</th>
                     <th>First Name</th>
                     <th>Middle Name</th>
+                    <th>Gender</th>
                     <th>Address</th>
                     <th>Contact</th>
                     <th>Action</th>
@@ -32,6 +33,7 @@
                     <th>Last Name</th>
                     <th>First Name</th>
                     <th>Middle Name</th>
+                    <th>Gender</th>
                     <th>Address</th>
                     <th>Contact</th>
                     <th>Action</th>
@@ -43,12 +45,13 @@
                     <td style="width: 15%"><?php echo $citizen['lastname']; ?></td>
                     <td style="width: 15%"><?php echo $citizen['firstname']; ?></td>
                     <td style="width: 15%"><?php echo $citizen['middlename']; ?></td>
-                    <td style="width: 20%"><?php echo word_limiter($citizen['address'], 5); ?></td>
+                    <td style="width: 10%"><?php echo $citizen['gender']; ?></td>
+                    <td style="width: 10%"><?php echo word_limiter($citizen['address'], 5); ?></td>
                     <td style="width: 5%"><?php echo $citizen['contact'] ?></td>
                     <td style="width: 30%" align="center">
                         <button type="button" class="btn btn-success btn-sm view-profile" data-citizens='<?php echo json_encode($relations);?>' 
                         data-profile="<?php echo htmlspecialchars(json_encode($profile = [ 'id' => $citizen['id'], 'lastname' => $citizen['lastname'], 'firstname' => $citizen['firstname'],
-                        'middlename' => $citizen['middlename'], 'address' => $citizen['address'], 'contact' => $citizen['contact'], 'name_slug'=>$citizen['name_slug'] ]));?>">
+                        'middlename' => $citizen['middlename'], 'gender' => $citizen['gender'], 'address' => $citizen['address'], 'contact' => $citizen['contact'], 'name_slug'=>$citizen['name_slug'] ]));?>">
                         
                         <i class="fa fa-fw fa-user-o"></i> Profiles</button>
                         <a href="<?php echo base_url('admin_pages/editcitizen/'.$citizen['id']);?>" class="btn btn-info btn-sm" role="button" aria-pressed="true"><i class="fa fa-fw fa-edit"></i> Edit</a>
@@ -112,6 +115,9 @@
 
                                 <div class="row">
                                     <div class="col-6 col-md-4">
+                                        <input type="text" readonly class="form-control" id="gender" value="Gender">
+                                    </div>
+                                    <div class="col-6 col-md-4">
                                         <input type="text" readonly class="form-control" id="address" value="Address">
                                     </div>
                                     <div class="col-6 col-md-4">
@@ -119,6 +125,7 @@
                                     </div>
                                 </div>
                                 <div class="row mb-2">
+                                    <div class="col-6 col-md-4 text-center small">Gender</div>
                                     <div class="col-6 col-md-4 text-center small">Address</div>
                                     <div class="col-6 col-md-4 text-center small">Contact</div>
                                 </div>
