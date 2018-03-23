@@ -88,8 +88,8 @@
                     'image' => $this->upload->file_name
                 ];
                 
-                // $this->db->where('id', $id);
-                $this->db->insert('news', $data);
+                $this->db->where('id',$id);
+                $this->db->update('news',$data);
                 return true;
             }
             else{

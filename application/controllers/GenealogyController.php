@@ -52,36 +52,46 @@
             // $data=[
             //     'citizens'=>$this->citizen_model->get_citizens(),
             // ];
+            $firstperson="Marites Encarnacion";
+            $secondperson="Kealu Rullamas";
             $relations=[];    
             $citizen=$this->citizen_model->get_citizens();
-            $firstperson='';
-            foreach($citizen as $firstper)
-            {
-                foreach($citizen as $people){
+        
+            $tree1=$this->supply($citizen,$firstperson);
+            $tree2=$this->supply($citizen,$secondperson);
+            // print_r($tree1);
+            // print_r($tree2);
+            $listlevelperson=$this->checkRelationship($this->supply($citizen,$firstperson),$this->supply($citizen,$secondperson));
+            print_r($listlevelperson);
+            $relationarray=$this->GetRelationship($tree2[0][0]['gender'], $listlevelperson[0], $listlevelperson[2], $listlevelperson[3]['name_slug'],$tree1);
+            echo $relationarray;
+            // foreach($citizen as $firstper)
+            // {
+            //     foreach($citizen as $people){
                   
-                    if($firstper['name_slug']!=$people['name_slug']){
-                        $tree1=$this->supply($citizen,$firstper['name_slug']);
-                        $tree2=$this->supply($citizen,$people['name_slug']);
+            //         if($firstper['name_slug']!=$people['name_slug']){
+            //             $tree1=$this->supply($citizen,$firstper['name_slug']);
+            //             $tree2=$this->supply($citizen,$people['name_slug']);
                     
-                        $listlevelperson=$this->checkRelationship($this->supply($citizen,$firstper['name_slug']),$this->supply($citizen,$people['name_slug']));
+            //             $listlevelperson=$this->checkRelationship($this->supply($citizen,$firstper['name_slug']),$this->supply($citizen,$people['name_slug']));
                        
-                        $relationarray=$this->GetRelationship($tree2[0][0]['gender'], $listlevelperson[0], $listlevelperson[2], $listlevelperson[3]['name_slug'],$tree1);
-                        $firstperson=$firstper['name_slug'];
-                        if(!empty($relationarray))
-                        {
-                            array_push($relations,array($people,$relationarray,$firstperson));
-                        }
+            //             $relationarray=$this->GetRelationship($tree2[0][0]['gender'], $listlevelperson[0], $listlevelperson[2], $listlevelperson[3]['name_slug'],$tree1);
+            //             $firstperson=$firstper['name_slug'];
+            //             if(!empty($relationarray))
+            //             {
+            //                 array_push($relations,array($people,$relationarray,$firstperson));
+            //             }
                         
-                    }
-                }
-            }
-            foreach($relations as $relation)
-            {
-                echo $relation[2].': '.$relation[0]['name_slug'].' '.$relation[1];
-            }
-            $data=['relations'=>$relations];
+            //         }
+            //     }
+            // }
+            // foreach($relations as $relation)
+            // {
+            //     echo $relation[2].': '.$relation[0]['name_slug'].' '.$relation[1];
+            // }
+            // $data=['relations'=>$relations];
             $this->load->view('templates/header');
-            $this->load->view('test_gen/genealogy',$data);
+            // $this->load->view('test_gen/genealogy');
             $this->load->view('templates/footer');
 
         }
@@ -194,7 +204,6 @@
     
         public function  GetRelationship($genderSecondPerson, $firstPersonLevel, $secondPersonLevel, $person2,$directtree)
         {
-            
             $OLDTOYOUNGINDIRECTFAMILYRELATIONMALE = [
             array("Brother","Nephew","Grand-Nephew","Great-Grand-Nephew","2nd Great-Grand-Nephew", "3rd Great-Grand-Nephew", "4th Great-Grand-Nephew", "5th Great-Grand-Nephew" ),
             array("Nephew", "First Cousin","First Cousin Once Removed","First Twice Removed","First Cousin 3x Removed","First Cousin 4x Removed", "First Cousin 5x Removed", "First Cousin 6x Removed" ),
@@ -329,9 +338,9 @@
                 }
                 else    // leftside is OLDER
                 {
-                    if(!empty($firstPersonLevel)&&!empty($secondPersonLevel)){
+                    // if(!empty($firstPersonLevel)&&!empty($secondPersonLevel)){
                     $relationship = $OldToYoungIndirectRelation[$firstPersonLevel][$secondPersonLevel];
-                    }
+                    // }
                 }
             }
             return $relationship;
