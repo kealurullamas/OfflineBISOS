@@ -49,13 +49,13 @@
                     <td style="width: 10%"><?php echo word_limiter($citizen['address'], 5); ?></td>
                     <td style="width: 5%"><?php echo $citizen['contact'] ?></td>
                     <td style="width: 30%" align="center">
-                        <button type="button" class="btn btn-success btn-sm view-profile" data-citizens='<?php echo json_encode($relations);?>' 
+                        <button type="button" class="mt-1 ml-1 mb-1 btn btn-success btn-sm view-profile" data-citizens='<?php echo json_encode($relations);?>' 
                         data-profile="<?php echo htmlspecialchars(json_encode($profile = [ 'id' => $citizen['id'], 'lastname' => $citizen['lastname'], 'firstname' => $citizen['firstname'],
-                        'middlename' => $citizen['middlename'], 'gender' => $citizen['gender'], 'address' => $citizen['address'], 'contact' => $citizen['contact'], 'name_slug'=>$citizen['name_slug'] ]));?>">
+                        'middlename' => $citizen['middlename'], 'gender' => $citizen['gender'], 'address' => $citizen['address'], 'contact' => $citizen['contact'], 'name_slug'=>$citizen['name_slug'] ]));?>">                        <i class="fa fa-fw fa-user-o"></i> Profiles</button>
                         
-                        <i class="fa fa-fw fa-user-o"></i> Profiles</button>
-                        <a href="<?php echo base_url('admin_pages/editcitizen/'.$citizen['id']);?>" class="btn btn-info btn-sm" role="button" aria-pressed="true"><i class="fa fa-fw fa-edit"></i> Edit</a>
-                        <button type="button" class="btn btn-danger btn-sm confirm-delete" data-url="<?php echo site_url('admins/deletecitizen/')?>" data-id="<?php echo $citizen['id'];?>"><i class="fa fa-fw fa-trash-o"></i> Delete</button>
+                        <a href="<?php echo base_url('admin_pages/editcitizen/'.$citizen['id']);?>" class="mt-1 ml-1 mb-1 btn btn-info btn-sm" role="button" aria-pressed="true"><i class="fa fa-fw fa-edit"></i> Edit</a>
+                        
+                        <button type="button" class="mt-1 ml-1 mb-1 btn btn-danger btn-sm confirm-delete" data-url="<?php echo site_url('admins/deletecitizen/')?>" data-id="<?php echo $citizen['id'];?>"><i class="fa fa-fw fa-trash-o"></i> Delete</button>
                      </td>
                     </tr>
                 <?php endforeach; ?>

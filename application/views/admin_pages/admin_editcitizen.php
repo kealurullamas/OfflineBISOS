@@ -46,8 +46,21 @@
                 <div class="row">
                     <div class="col-6 col-md-4">
                         <label>Father</label>
+                            <?php foreach($citizens as $citizen): ?>
+                                    <?php if($citizen['name_slug'] == $row['father'] ): ?>
+                                        <?php $fathername = $citizen['lastname'] . ', ' . $citizen['firstname'] . ' ' . $citizen['middlename'];?>
+                                    <?php elseif($citizen['name_slug'] == $row['mother'] ): ?>
+                                        <?php $mothername = $citizen['lastname'] . ', ' . $citizen['firstname'] . ' ' . $citizen['middlename'];?>
+
+                                    <?php endif; ?>
+                            <?php endforeach; ?>  
                         <select class="combobox mySelect input-large form-control" name="father" >
-                            <option value="" selected="">Select a Person</option>
+                            <option value="" selected=""><?php if(!empty($row['father'])):?><?php echo $fathername?>                          
+                            <?php else: ?>Select a Person
+                            <?php endif;?>
+                            
+                            </option>
+
                             <?php foreach($citizens as $citizen): ?>
                             <?php if($citizen['gender'] == 'Male'): ?>
                             <option value="<?php echo $citizen['name_slug'];?>"><?php echo $citizen['lastname'] . ', ' . $citizen['firstname'] . ' ' . $citizen['middlename'];?></option>
@@ -58,7 +71,14 @@
                     <div class="col-6 col-md-4">
                         <label>Mother</label>
                         <select class="combobox mySelect input-large form-control" name="mother">
-                            <option value="" selected="">Select a Person</option>
+                            <option value="" selected=""><?php if(!empty($row['father'])):?><?php echo $mothername?>                          
+                            <?php else: ?>Select a Person
+                            <?php endif;?>
+                            
+                            <!-- <?php if (!empty($row['mother'])):?><?php echo $mothername?> -->
+                            <!-- <?php else: ?>Select a Person -->
+                            <!-- <?php endif;?> -->
+                            </option>
                             <?php foreach($citizens as $citizen): ?>
                             <?php if($citizen['gender'] == 'Female'): ?>
                             <option value="<?php echo $citizen['name_slug'];?>"><?php echo $citizen['lastname'] . ', ' . $citizen['firstname'] . ' ' . $citizen['middlename'];?></option>
