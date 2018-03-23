@@ -16,6 +16,7 @@
   <link href="<?php echo base_url(); ?>assets/admin/vendor/datatables/dataTables.bootstrap4.css" rel="stylesheet">
   <!-- Custom styles for this template-->
   <link href="<?php echo base_url(); ?>assets/admin/css/sb-admin.css" rel="stylesheet">
+  <link rel="stylesheet" href="<?php echo base_url('assets/admin/combobox/css/bootstrap-combobox.css'); ?>">
   
 </head>
 

@@ -165,15 +165,17 @@
                 $this->form_validation->set_rules('firstname', 'First Name', 'required');
                 $this->form_validation->set_rules('middlename', 'Middle Name', 'required');
                 $this->form_validation->set_rules('address', 'Address', 'required');
+                $this->form_validation->set_rules('gender', 'Gender', 'required');
                 
                 if($this->form_validation->run()){
                     $lastname = $this->input->post('lastname');
                     $firstname = $this->input->post('firstname');
                     $middlename = $this->input->post('middlename');
+                    $gender = $this->input->post('gender');
                     $contact = $this->input->post('contact');
                     $address = $this->input->post('address');
                     
-                    $this->citizen_model->add_citizen($lastname, $firstname, $middlename, $contact, $address);
+                    $this->citizen_model->add_citizen($lastname, $firstname, $middlename, $gender, $contact, $address);
                     $data = ['success' => TRUE];
                     $this->session->set_flashdata($data);
                     redirect('admin_pages/addcitizen', 'refresh');
@@ -198,8 +200,10 @@
                     $middlename = $this->input->post('middlename');
                     $address = $this->input->post('address');
                     $contact = $this->input->post('contact');
+                    $father = $this->input->post('father');
+                    $mother = $this->input->post('mother');
 
-                    $this->citizen_model->update_citizen($id, $lastname, $firstname, $middlename, $address, $contact);
+                    $this->citizen_model->update_citizen($id, $lastname, $firstname, $middlename, $address, $contact, $father, $mother);
                     $data = ['success' => TRUE];
                     $this->session->set_flashdata($data);
                     redirect('admin_pages/citizens');

@@ -1,5 +1,5 @@
 $(document).ready(function(){
-
+	$('.mySelect').combobox()
   
 
     // delete confirmation in an alert message
@@ -76,9 +76,11 @@ $(document).ready(function(){
             $('#lastname').val(profile['lastname']);
             $('#firstname').val(profile['firstname']);
             $('#middlename').val(profile['middlename']);
+            $('#gender').val(profile['gender']);
             $('#address').val(profile['address']);
             $('#contact').val(profile['contact']);
-            console.log("ma name is"+profile['name_slug']);
+            // console.log("ma name is"+profile['name_slug']);
+            console.log(citizens);
             var html = '';
             for(var i = 0; i < citizens.length; i++){
                
@@ -227,3 +229,4 @@ $(document).ready(function(){
     //         }
     //     }
 });  
+

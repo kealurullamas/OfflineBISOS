@@ -38,14 +38,34 @@
                 <?php if($this->session->flashdata('error')): ?>
                 <span class="text-danger">*</span>
                 <?php endif; ?>
+                <label>Gender</label>
+                
+                <!--Radio group-->
+                <div class="form-check">
+                    <input name="gender" type="radio" class="with-gap" id="male" value="Male">
+                    <label for="radio106">Male</label>
+                </div>
+                <div class="form-check">
+                    <input name="gender" type="radio" class="with-gap" id="female" value="Female">
+                    <label for="radio107">Female</label>
+                </div>
+
+
+                <!--Radio group-->
+                
+  </div>
+                <?php if($this->session->flashdata('error')): ?>
+                <span class="text-danger">*</span>
+                <?php endif; ?>
                 <label>Address</label>
                 <input type="text" name="address" class="form-control">
                 <label>Contact</label>
                 <input type="text" name="contact" class="form-control">
                 </div>
                 <div class="float-right">
-                <button type="submit" class="btn btn-primary ">Submit</button>
+                <button type="submit" class="btn btn-primary mr-3 ">Submit</button>
                 </div>
+                <br><br>
             <?php echo form_close(); ?>
         </div>
     </div>
