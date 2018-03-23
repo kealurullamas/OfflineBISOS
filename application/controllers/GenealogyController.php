@@ -64,14 +64,14 @@
                         $tree2=$this->supply($citizen,$people['name_slug']);
                     
                         $listlevelperson=$this->checkRelationship($this->supply($citizen,$firstper['name_slug']),$this->supply($citizen,$people['name_slug']));
-                        if(!empty($listlevelperson)){
-                            $relationarray=$this->GetRelationship($tree2[0][0]['gender'], $listlevelperson[0], $listlevelperson[2], $listlevelperson[3]['name_slug'],$tree1);
-                            $firstperson=$firstper['name_slug'];
-                            if(!empty($relationarray))
-                            {
-                                array_push($relations,array($people,$relationarray,$firstperson));
-                            }
+                       
+                        $relationarray=$this->GetRelationship($tree2[0][0]['gender'], $listlevelperson[0], $listlevelperson[2], $listlevelperson[3]['name_slug'],$tree1);
+                        $firstperson=$firstper['name_slug'];
+                        if(!empty($relationarray))
+                        {
+                            array_push($relations,array($people,$relationarray,$firstperson));
                         }
+                        
                     }
                 }
             }
