@@ -62,7 +62,7 @@ $route['news/create']='news/create';
 $route['pages/view/(:any)']='pages/view/$1';
 $route['news/(:any)']='news/view/$1';
 
-$route['default_controller'] = 'pages/view';
+$route['default_controller'] = 'blotters/index';
 $route['(:any)'] = 'pages/view/$1';
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;
